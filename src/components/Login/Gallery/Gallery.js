@@ -20,16 +20,16 @@ const Gallery = () => {
     }
 
     return (
-        <div className='home__gallery flex__center'>
-            <div className='home__gallery-images'>
-                <div className='home__gallery-images_container' ref={scrollRef}>
+        <div className='login__gallery flex__center'>
+            <div className='login__gallery-images'>
+                <div className='login__gallery-images_container' ref={scrollRef}>
                     {galleryImages.map((image, index) => (
-                        <div className='home__gallery-images_card flex__center' key={`gallery_image-${index + 1}`} >
+                        <div className='login__gallery-images_card flex__center' key={`gallery_image-${index + 1}`} >
                             <img src={image} alt="gallery" />
                         </div>
                     ))}
                 </div>
-                <div className='home__gallery-images_arrows'>
+                <div className='login__gallery-images_arrows'>
                     <VscChevronLeft className='gallery__arrow-icon' onClick={() => scroll('left')} />
                     <VscChevronRight className='gallery__arrow-icon' onClick={() => scroll('right')} />
                 </div>

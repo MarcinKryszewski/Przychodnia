@@ -1,12 +1,19 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Gallery from './components/Home/Gallery/Gallery';
+import Home from './components/Home/Home';
+import Login from './components/Login/Login';
 
-const App = () => (
-    <div>
-      <Navbar />
-      <Gallery />
-    </div>
-)
+import {
+  Routes,
+  Route
+ } from "react-router-dom";
+
+function App() {
+  return(
+    <Routes>
+      <Route path="/przychodnia" element={<Home />} />
+      <Route path="/przychodnia/login" element={<Login />} />
+    </Routes>
+  )
+}
 
 export default App;
