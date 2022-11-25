@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/przychodnia/static/css/main.c3b914e5.css",
+    "main.js": "/przychodnia/static/js/main.b68e3c06.js",
+    "static/media/gallery2.png": "/przychodnia/static/media/gallery2.6c2f441e378ab0a5e897.png",
+    "static/media/gallery1.png": "/przychodnia/static/media/gallery1.0758f1746309d4f0f339.png",
+    "static/media/logo.png": "/przychodnia/static/media/logo.a39798655338f2b1bb13.png",
+    "index.html": "/przychodnia/index.html",
+    "main.c3b914e5.css.map": "/przychodnia/static/css/main.c3b914e5.css.map",
+    "main.b68e3c06.js.map": "/przychodnia/static/js/main.b68e3c06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3b914e5.css",
+    "static/js/main.b68e3c06.js"
+  ]
+}
