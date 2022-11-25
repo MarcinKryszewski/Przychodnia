@@ -1,13 +1,11 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import Gallery from './components/Home/Gallery/Gallery';
 
 const App = () => (
     <div>
       <Navbar />
-      <div className='app__homePage app__pageDiv'>
-        <div className='home__top'>aaa</div>
-        <div className='home__bottom'>cccc</div>
-      </div>      
+      <Gallery />
     </div>
 )
 

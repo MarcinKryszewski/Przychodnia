@@ -10,13 +10,14 @@ const Navbar = () => (
     </div>
     <ul className='app__navbar-links'>
       <li className='p__opensans'><a href='#home'>HOME</a></li>
+      <li className='p__opensans'><a href='#home'>O NAS</a></li>
       <li className='p__opensans'><a href='#services'>USŁUGI</a></li>
       <li className='p__opensans'><a href='#contact'>KONTAKT</a></li>
     </ul>
     <div className='app__navbar-login'>
       <a href='#login' className='p__opensans'>Logowanie / Rejestracja</a>
       <div />
-      <a href="/" className='p__opensans'>Zamów wizytę</a>
+      <a href="#order" className='p__opensans'>Zamów wizytę</a>
     </div>
   </nav>
 );

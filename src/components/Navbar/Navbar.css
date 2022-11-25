@@ -1,5 +1,4 @@
 .app__navbar {
-    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -13,10 +12,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
 }
 
 .app_navbar-logo img {
     width: 200px;
+    margin-left: 40%;
 }
 
 .app__navbar-links {
@@ -31,6 +32,7 @@
 .app__navbar-links li {
     margin: 0 1rem;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .app__navbar-links li:hover {
@@ -47,6 +49,7 @@
     margin: 0 1rem;
     text-decoration: none;
     transition: 0.5s ease;
+    font-weight: 600;
 }
 
 .app__navbar-login a:hover {
@@ -54,7 +57,7 @@
 }
 
 .app__navbar-login div {
-    width: 1px;
+    width: 2px;
     height: 30px;
     background-color: var(--color-gray);
 }
