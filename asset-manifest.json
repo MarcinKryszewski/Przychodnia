@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/przychodnia/static/css/main.1dcb2526.css",
-    "main.js": "/przychodnia/static/js/main.9cf413f6.js",
+    "main.css": "/przychodnia/static/css/main.9244511b.css",
+    "main.js": "/przychodnia/static/js/main.ea8b056f.js",
     "static/media/gallery2.png": "/przychodnia/static/media/gallery2.6c2f441e378ab0a5e897.png",
     "static/media/gallery1.png": "/przychodnia/static/media/gallery1.0758f1746309d4f0f339.png",
     "static/media/logo.png": "/przychodnia/static/media/logo.a39798655338f2b1bb13.png",
     "index.html": "/przychodnia/index.html",
-    "main.1dcb2526.css.map": "/przychodnia/static/css/main.1dcb2526.css.map",
-    "main.9cf413f6.js.map": "/przychodnia/static/js/main.9cf413f6.js.map"
+    "main.9244511b.css.map": "/przychodnia/static/css/main.9244511b.css.map",
+    "main.ea8b056f.js.map": "/przychodnia/static/js/main.ea8b056f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1dcb2526.css",
-    "static/js/main.9cf413f6.js"
+    "static/css/main.9244511b.css",
+    "static/js/main.ea8b056f.js"
   ]
 }
