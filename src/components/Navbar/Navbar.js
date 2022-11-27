@@ -12,7 +12,8 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
-        <img src={images.logo} alt='LOGO' />
+        <Link to='/przychodnia'><img src={images.logo} alt='LOGO' /></Link>
+        
       </div>
       <ul className='app__navbar-links'>
         <li className='p__opensans'><Link to='/przychodnia'>HOME</Link></li>
@@ -25,8 +26,10 @@ const Navbar = () => {
         <div />
         <a href="#order" className='p__opensans'>Zamów wizytę</a>
       </div>
+
+      
       <div className='app__navbar-smallscreen'>
-        <GiHamburgerMenu color='fff' fontSize={27} onClick={() => setToggleMenu(true)} />
+        <GiHamburgerMenu color='000' fontSize={27} onClick={() => setToggleMenu(true)} />
         
         {toggleMenu &&  (
           <div className='app__navbar-smallscreen_overlay flex__center slide-bottom'>
@@ -36,7 +39,9 @@ const Navbar = () => {
               <li className='p__opensans'><a href='#home'>O NAS</a></li>
               <li className='p__opensans'><a href='#services'>USŁUGI</a></li>
               <li className='p__opensans'><a href='#contact'>KONTAKT</a></li>
-            </ul>
+              <li className='p__opensans'><Link to='/przychodnia/login'>Logowanie / Rejestracja</Link></li>
+              <li className='p__opensans'><a href="#order" >Zamów wizytę</a></li>
+            </ul>           
           </div>
         )}        
 

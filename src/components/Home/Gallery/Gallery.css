@@ -32,7 +32,7 @@
 .home__gallery-images_card {
     position: relative;
     min-width: 1200px;
-    margin-right: 2rem;
+    margin-right: 0rem;
 }
 
 .home__gallery-images_card img {
