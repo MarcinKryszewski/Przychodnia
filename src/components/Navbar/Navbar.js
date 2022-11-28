@@ -17,9 +17,9 @@ const Navbar = () => {
       </div>
       <ul className='app__navbar-links'>
         <li className='p__opensans'><Link to='/przychodnia'>HOME</Link></li>
-        <li className='p__opensans'><a href='#home'>O NAS</a></li>
-        <li className='p__opensans'><a href='#services'>USŁUGI</a></li>
-        <li className='p__opensans'><a href='#contact'>KONTAKT</a></li>
+        <li className='p__opensans'><Link to='/przychodnia/aboutus'>O NAS</Link></li>
+        <li className='p__opensans'><Link to='/przychodnia/services'>USŁUGI</Link></li>
+        <li className='p__opensans'><Link to='/przychodnia/contact'>KONTAKT</Link></li>
       </ul>
       <div className='app__navbar-login'>
         <Link to='/przychodnia/login' className='p__opensans'>Logowanie / Rejestracja</Link>
