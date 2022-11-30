@@ -16,12 +16,19 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      user: ''
+      user: '',
+      loggedIn: false
     };
   }
 
   userLogin = (e) => {
-    this.setState({loggedIn: e});
+    this.setState
+    (
+      {
+        loggedIn: e.loggedIn,
+        user: e.user
+      }
+    );
   }
 
   render(){

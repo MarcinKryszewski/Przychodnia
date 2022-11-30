@@ -18,8 +18,14 @@ class Login extends React.Component {
   };
 
   userLogin = (e) => {
-    this.setState({user: e.user});
-    this.setState({loggedIn: e.loggedIn});
+    this.setState
+    (
+      {
+        user: e.user,
+        loggedIn: e.loggedIn
+      },
+      () => {this.props.onChange(this.state)}
+    );
   }
 
   render(){

@@ -79,7 +79,7 @@
 }
 
 .app__navbar-smallscreen_overlay .overlay__close {
-    font-size: 27;
+    font-size: 50pt;
     color: var(--color-golden);
     cursor: pointer;
 
@@ -94,6 +94,7 @@
 
 .app__navbar-smallscreen-links li {
     margin: 2rem;
+    padding: 0.3rem;
     cursor: pointer;
     color: var(--color-golden);
     font-size: 27;
@@ -104,6 +105,9 @@
 
 .app__navbar-smallscreen-links li:hover {
     color: var(--color-white);
+    background-color: var(--color-crimson);
+    border-radius: 15px;
+    border: 1px solid black;
 }
 
 @media screen and (max-width: 2000px) {

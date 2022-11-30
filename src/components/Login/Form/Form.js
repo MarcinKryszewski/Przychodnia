@@ -32,10 +32,15 @@ class Form extends React.Component {
   } 
 
   handleSubmit = async () => {
-    this.setState({user: ''});    
-    this.setState({password: ''});
-    this.setState({loggedIn: true});
-    this.props.onChange(this.state);
+    this.setState
+    (
+      {
+        user: this.state.user,
+        password: this.state.password,
+        loggedIn: true
+      },
+      () => {this.props.onChange(this.state)}
+    );    
   };
 
   render(){
