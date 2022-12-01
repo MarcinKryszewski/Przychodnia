@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect, props } from 'react'
-import Navbar from '../Navbar/Navbar';
+import React from 'react'
 import Gallery from './Gallery/Gallery';
 import Form from './Form/Form';
 import { Navigate } from 'react-router';
@@ -30,8 +29,7 @@ class Login extends React.Component {
 
   render(){
     return (
-    <div>
-        <Navbar />        
+    <div>     
       {this.state.loggedIn ? 
           (
             <Navigate to="/przychodnia" />

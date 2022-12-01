@@ -6,7 +6,6 @@ import images from '../../constants/images'
 const Contact = () => {
   return (
     <div>
-        <Navbar />
         <div className='flex__center'><img src={images.wip} alt='LOGO' /></div>     
     </div>    
   )

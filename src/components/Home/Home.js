@@ -5,7 +5,6 @@ import Gallery from './Gallery/Gallery';
 
 const Home = () => (  
     <div>
-      <Navbar />
       <Gallery />
     </div>
 )
