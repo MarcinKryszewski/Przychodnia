@@ -1,0 +1,14 @@
+.user__menu-wrapper {
+    width: 30%;
+    height: 100%;
+    max-width: 300px;
+    min-width: 210px;
+    background-color: var(--color-gray);
+}
+
+.user__menu {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    
+}

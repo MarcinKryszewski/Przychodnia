@@ -1,0 +1,31 @@
+.sidemenu__buttons-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-gray);
+    margin: 0.2rem 0.3rem;
+    padding: 1rem 0.3rem;
+    min-width: 180px;
+}
+
+.sidemenu__buttons-menu {
+    height: 3rem;
+    width: 100%;
+    display: block;
+    margin: 0.2rem 0;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 1.3rem;
+    border: 0.1rem solid black;
+    min-width: 160px;
+}
+
+.sidemenu__buttons-menu:hover {
+    background-color: var(--color-white);
+    color: var(--color-crimson);
+}
+
+.user__component-wrapper {
+    width: 100%;
+    padding: 1.2rem 4rem;
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import './Sidemenu.css'
 
 export class Sidemenu extends React.Component {
 
@@ -23,12 +24,16 @@ export class Sidemenu extends React.Component {
   render() {
     const menuElements = this.state.menuElements.map(
       e => {
-        return <button onClick={this.handleMenu} key={e.id} value={e.id}>{e.title}</button>
+        return <button 
+        onClick={this.handleMenu}
+        key={e.id}
+        value={e.id}
+        className="sidemenu__buttons-menu">{e.title}</button>
       }
     )
 
     return (
-      <div>
+      <div className='sidemenu__buttons-container flex__center'>
         {menuElements}
       </div>
     )

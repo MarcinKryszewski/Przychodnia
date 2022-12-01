@@ -32,15 +32,17 @@ import {
   }, [menuClicked])*/   
 
   return (
-    <div>
-      <SideMenu onChange={MenuClick} />
+    <div className='user__menu'>
+      <div className='user__menu-wrapper'><SideMenu onChange={MenuClick} /></div>
+      <div className='user__component-wrapper'>
         <Routes>  
           <Route path="/Meds" element={<Meds />} />
           <Route path="/Prescriptions" element={<Prescriptions />} />    
           <Route path="/Referals" element={<Referals />} />    
           <Route path="Sickleaves" element={<Sickleaves />} />    
           <Route path="/Visits" element={<Visits />} /> 
-        </Routes>     
+        </Routes>
+      </div>             
     </div>
   )
 }
