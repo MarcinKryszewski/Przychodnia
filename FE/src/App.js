@@ -5,7 +5,9 @@ import Aboutus from './components/Aboutus/Aboutus';
 import Services from './components/Services/Services';
 import Contact from './components/Contact/Contact';
 import Navbar from './components/Navbar/Navbar';
-import User from './components/User/User'
+import User from './components/User/User';
+import Store from './Store';
+import AdminPanel from './components/AdminPanel/AdminPanel';
 
 import React, { 
   useRef, 
@@ -25,7 +27,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       user: '',
-      loggedIn: false
+      loggedIn: false,
+      userSpecial: false
     };
   }
 
@@ -41,7 +44,8 @@ class App extends React.Component {
 
   render(){
     return(
-      <>
+      <>      
+      <Store>
       <Navbar value={this.state.loggedIn} />
       <Routes>        
         <Route path="/przychodnia" element={<Home />} />      
@@ -50,7 +54,9 @@ class App extends React.Component {
         <Route path="/przychodnia/contact" element={<Contact />} />
         <Route path="/przychodnia/login" element={<Login user={this.state.user} onChange={this.userLogin} />} />
         <Route path="/przychodnia/user/*" element={<User />} />
+        <Route path="/przychodnia/admin" element={<AdminPanel />} />
       </Routes>
+      </Store>
       </>
       
     )
