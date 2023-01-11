@@ -13,11 +13,12 @@ function Navbar () {
   const [toggleMenu, setToggleMenu] = useState('');
   const [state, setState] = useContext(Context);
 
-  const handleClick = e => {
-    console.log(state.user);
-    setState(state.userLogged = false);
-    setState(state.user = '');
-    setState(state.userSpecial = false);
+  const handleClick = () => {
+    setState({
+      userLogged : false,
+      userId: '',
+      userSpecial: false
+    });
   };
 
   return (
@@ -32,20 +33,27 @@ function Navbar () {
           <li className='p__opensans'><Link to='/przychodnia/services'>USŁUGI</Link></li>
           <li className='p__opensans'><Link to='/przychodnia/contact'>KONTAKT</Link></li>
         </ul>
-        <div>{ state.userLogged ?
-          (<div className='app__navbar-login'>
-              <Link to='/przychodnia/user' className='p__opensans'>Pacjent</Link>
-              <div />
-              <Link to='/przychodnia' className='p__opensans' onClick={handleClick}>Wyloguj</Link>              
-            </div >) : 
-            (<div className='app__navbar-login'>
-              <Link to='/przychodnia/login' className='p__opensans'>Logowanie</Link>
-            </div>)}
-          {state.userSpecial &&
-            <div>
-              <div />
-              <Link to='/przychodnia/admin' className='p__opensans'>ADMIN</Link>
-            </div>}
+        <div>
+          {state.userLogged && state.userSpecial &&
+          <div className='app__navbar-login'>
+            <Link to='/przychodnia/adminpanel' className='p__opensans'>ADMIN</Link>
+            <div />
+            <Link to='/przychodnia' className='p__opensans' onClick={handleClick}>Wyloguj</Link>
+          </div>
+          }
+
+          {state.userLogged == true && state.userSpecial == false &&
+          <div className='app__navbar-login'>
+            <Link to='/przychodnia/user' className='p__opensans'>Pacjent</Link>
+            <div />
+            <Link to='/przychodnia' className='p__opensans' onClick={handleClick}>Wyloguj</Link>
+          </div>
+          }
+
+          {state.userLogged == false && state.userSpecial == false &&
+          <div className='app__navbar-login'><Link to='/przychodnia/login' className='p__opensans'>Logowanie</Link></div>
+          }
+          
         </div>
 
         
@@ -56,11 +64,11 @@ function Navbar () {
               <MdLocalHospital fontSize={27} className='overlay__close' onClick={() => setToggleMenu(false)} />
               <ul className='app__navbar-smallscreen-links'>
                 <li className='p__opensans'><Link to='/przychodnia'>HOME</Link></li>
-                <li className='p__opensans'><a href='#home'>O NAS</a></li>
-                <li className='p__opensans'><a href='#services'>USŁUGI</a></li>
-                <li className='p__opensans'><a href='#contact'>KONTAKT</a></li>
-                <li className='p__opensans'><Link to='/przychodnia/login'>Logowanie</Link></li>
-                <li className='p__opensans'><Link to='/przychodnia' className='p__opensans'>Wyloguj</Link></li>
+                <li className='p__opensans'><Link to='/przychodnia/aboutus'>O NAS</Link></li>
+                <li className='p__opensans'><Link to='/przychodnia/services'>USŁUGI</Link></li>
+                <li className='p__opensans'><Link to='/przychodnia/contact'>KONTAKT</Link></li>
+                {state.userLogged ? (<li className='p__opensans'><Link to='/przychodnia' onClick={handleClick} >Wyloguj</Link></li>) :
+                (<li className='p__opensans'><Link to='/przychodnia/login' >Logowanie</Link></li>)}
               </ul>           
             </div>
           )}        

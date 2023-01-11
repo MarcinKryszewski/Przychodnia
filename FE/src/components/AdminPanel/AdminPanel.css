@@ -1,0 +1,16 @@
+.adminPanel__menu {
+    display: flex;
+    flex-grow: 1;
+    background-color: var(--color-black);
+    color: var(--color-neongreen);
+}
+
+.adminPanel__menu-wrapper {
+    width: 15%;
+    height: 100vh;
+}
+
+.adminPanel__component-wrapper {
+    flex-grow: 1;
+    height: 100vh;
+}

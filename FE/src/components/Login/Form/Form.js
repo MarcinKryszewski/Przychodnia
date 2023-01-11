@@ -30,7 +30,8 @@ function Form () {
       } else {
         setState({
           userLogged: true,
-          userId: loggedUser
+          userId: loggedUser,
+          userSpecial: false
         });
       }
       

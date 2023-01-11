@@ -21,8 +21,8 @@
 }
 
 .sidemenu__buttons-menu:hover {
-    background-color: var(--color-white);
-    color: var(--color-crimson);
+    background-color: var(--color-creamwhite);
+    color: var(--color-lightblue);
 }
 
 .user__component-wrapper {

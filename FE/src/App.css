@@ -2,20 +2,20 @@
     padding: 4rem 6rem;
   }
   
-  .flex__center {
+.flex__center {
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .app__bg {
+.app__bg {
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
     background-attachment: fixed;
   }
   
-  .app__wrapper {
+.app__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,7 @@
     min-height: 100vh;
   }
   
-  .app__wrapper_info {
+.app__wrapper_info {
     flex: 1;
     width: 100%;
     display: flex;
@@ -32,7 +32,7 @@
     flex-direction: column;
   }
   
-  .app__wrapper_img {
+.app__wrapper_img {
     flex: 1;
     width: 100%;
     display: flex;
@@ -42,17 +42,17 @@
     margin-left: 2rem;
   }
   
-  .app__wrapper_img-reverse {
+.app__wrapper_img-reverse {
     justify-content: flex-start;
     margin-right: 2rem;
   }
   
-  .app__wrapper_img img {
+.app__wrapper_img img {
     width: 80%;
   }
   
-  .custom__button {
-    background-color: var(--color-crimson);
+.custom__button {
+    background-color: var(--color-creamwhite);
       color: var(--color-black);
       font-family: var(--font-base);
       font-weight: 700;
@@ -66,7 +66,7 @@
       cursor: pointer;
   }
   
-  .p__cormorant {
+.p__cormorant {
     font-family: var(--font-base);
     color: var(--color-white);
     font-weight: 700;
@@ -77,9 +77,9 @@
     font-size: 23px;
   }
   
-  .p__opensans {
+.p__opensans {
     font-family: var(--font-alt);
-    color: var(--color-white);
+    color: var(--color-darkblue);
     font-weight: 400;
     letter-spacing: 0.04em;
     text-transform: capitalize;
@@ -87,89 +87,89 @@
     font-size: 16px;
   }
   
-  .headtext__cormorant {
+.headtext__cormorant {
     font-family: var(--font-base);
-    color: var(--color-golden);
+    color: var(--color-lightblue);
     font-size: 64px;
     line-height: 83.2px;
     letter-spacing: 0.04em;
     text-transform: capitalize;
   }
   
-  .spoon__img {
+.spoon__img {
     width: 45px;
   }
   
-  @media screen and (min-width: 2000px) {
-    .custom__button,
-    .p__cormorant {
+@media screen and (min-width: 2000px) {
+  .custom__button,
+  .p__cormorant {
       font-size: 37px;
       line-height: 67px;
     }
   
-    .p__opensans {
+  .p__opensans {
       font-size: 30px;
       line-height: 50px;
     }
   
-    .headtext__cormorant {
+  .headtext__cormorant {
       font-size: 150px;
       line-height: 210px;
     }
   
-    .spoon__img {
+  .spoon__img {
       width: 80px;
     }
   }
   
-  @media screen and (max-width: 1150px) {
-    .app__wrapper {
+@media screen and (max-width: 1150px) {
+  .app__wrapper {
       flex-direction: column;
     }
   
-    .app__wrapper_img {
+  .app__wrapper_img {
       margin: 5rem 0 0 0;
     }
   
-    .app__wrapper_img-reverse {
+  .app__wrapper_img-reverse {
       margin: 0 0 5rem 0;
     }
   
-    .app__wrapper_img img {
+  .app__wrapper_img img {
       width: 100%;
     }
   }
   
-  @media screen and (max-width: 850px) {
-    .section__padding {
+@media screen and (max-width: 850px) {
+  .section__padding {
       padding: 4rem;
     }
   }
   
-  @media screen and (max-width: 650px) {
-    .section__padding {
+@media screen and (max-width: 650px) {
+  .section__padding {
       padding: 4rem 2rem;
     }
     
-    .p__cormorant {
+  .p__cormorant {
       font-size: 21px;
     }
   
-    .p__opensans {
+  .p__opensans {
       font-size: 14px;
     }
   }
   
-  @media screen and (max-width: 450px) {
-    .p__opensans {
+@media screen and (max-width: 450px) {
+  .p__opensans {
       font-size: 12px;
     }
   
-    .p__cormorant {
+  .p__cormorant {
       font-size: 19px;
     }
   
-    .headtext__cormorant {
+  .headtext__cormorant {
       font-size: 45px;
       line-height: 70px;
     }

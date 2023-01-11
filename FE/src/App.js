@@ -23,6 +23,7 @@ import {
 
 class App extends React.Component {
 
+  /*
   constructor(props){
     super(props);
     this.state = {
@@ -41,20 +42,24 @@ class App extends React.Component {
       }
     );
   }
+  value={this.state.loggedIn}
+
+  user={this.state.user} onChange={this.userLogin}
+  */
 
   render(){
     return(
       <>      
       <Store>
-      <Navbar value={this.state.loggedIn} />
+      <Navbar  />
       <Routes>        
         <Route path="/przychodnia" element={<Home />} />      
         <Route path="/przychodnia/aboutus" element={<Aboutus />} />
         <Route path="/przychodnia/services" element={<Services />} />
         <Route path="/przychodnia/contact" element={<Contact />} />
-        <Route path="/przychodnia/login" element={<Login user={this.state.user} onChange={this.userLogin} />} />
+        <Route path="/przychodnia/login" element={<Login  />} />
         <Route path="/przychodnia/user/*" element={<User />} />
-        <Route path="/przychodnia/admin" element={<AdminPanel />} />
+        <Route path="/przychodnia/adminpanel/*" element={<AdminPanel />} />
       </Routes>
       </Store>
       </>

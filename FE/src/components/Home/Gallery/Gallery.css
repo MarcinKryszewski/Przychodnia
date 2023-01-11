@@ -60,7 +60,7 @@
 }
 
 .gallery__arrow-icon {
-    color: var(--color-golden);
+    color: var(--color-lightblue);
     font-size: 3rem;
     cursor: pointer;
     background-color: var(--color-black);
@@ -69,7 +69,7 @@
 }
 
 .gallery__arrow-icon:hover {
-    background-color: var(--color-white);
+    background-color: var(--color-darkblue);
 }
 
 @media screen and (min-width: 2000px) {

@@ -39,7 +39,7 @@ import {
           <Route path="/Meds" element={<Meds />} />
           <Route path="/Prescriptions" element={<Prescriptions />} />    
           <Route path="/Referals" element={<Referals />} />    
-          <Route path="Sickleaves" element={<Sickleaves />} />    
+          <Route path="/Sickleaves" element={<Sickleaves />} />    
           <Route path="/Visits" element={<Visits />} /> 
         </Routes>
       </div>             
