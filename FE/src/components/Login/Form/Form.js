@@ -36,7 +36,6 @@ function Form () {
       }
       
     } catch (error) {
-      console.log(error);
       NotificationManager.error(error.response.data);
     }
   };
@@ -53,7 +52,6 @@ function Form () {
 
   return (    
     <div className='login__form-form'>
-      <NotificationContainer />
       <div className='login__form-title'>Logowanie</div>
       <input 
         type="text" 

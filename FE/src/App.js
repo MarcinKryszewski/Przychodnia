@@ -8,6 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 import User from './components/User/User';
 import Store from './Store';
 import AdminPanel from './components/AdminPanel/AdminPanel';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 import React, { 
   useRef, 
@@ -51,6 +52,7 @@ class App extends React.Component {
     return(
       <>      
       <Store>
+      <NotificationContainer />
       <Navbar  />
       <Routes>        
         <Route path="/przychodnia" element={<Home />} />      
