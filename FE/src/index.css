@@ -10,6 +10,7 @@
     --color-darkblue: #00259f;
     --color-neongreen: #39FF14;
     --color-black: #202020;
+    --color-darkgreen: #0C8900;
 
 }
 
@@ -18,6 +19,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    font-family: var(--font-base);
 }
 
 html, body {

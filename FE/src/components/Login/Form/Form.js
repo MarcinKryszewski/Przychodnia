@@ -33,8 +33,7 @@ function Form () {
           userId: loggedUser,
           userSpecial: false
         });
-      }
-      
+      }      
     } catch (error) {
       NotificationManager.error(error.response.data);
     }

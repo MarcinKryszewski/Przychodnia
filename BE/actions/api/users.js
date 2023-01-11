@@ -12,6 +12,8 @@ class UserActions {
         const password = req.body.password;
         const userspecial = req.body.userspecial;
 
+        console.log(req.body);
+
         if (await User.findOne({ "username": username }) == null) {    
             const user = new User({
                 username: username,
@@ -29,8 +31,6 @@ class UserActions {
         const username = req.body.username;
         const password = req.body.password;        
         const user = await User.findOne({username: username});
-        //console.log(user);
-        //const userspecial = user.userspecial;
         try{
             if (user.password == password) {
                 const userspecial = user.userspecial;;

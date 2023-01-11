@@ -1,0 +1,54 @@
+.adminPanel__users_user {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+}
+
+#adminPanel__users_table td, #adminPanel__users_table th {
+    border: 1px solid var(--color-black);
+    padding: 3px;
+    text-align: center;
+  }
+  
+  #adminPanel__users_table tr:nth-child(even){
+    background-color: var(--color-gray);
+  }
+  
+  #adminPanel__users_table tr:hover {
+    background-color: var(--color-grey);
+    color: var(--color-darkgreen);
+  }
+  
+  #adminPanel__users_table th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    background-color: var(--color-darkgreen);
+    color: var(--color-white);
+    font-weight: 800;
+  }
+
+  #adminPanel__users_table button, .adminPanel__users_adduser {
+    margin: 0 0.2rem;
+    padding: 0.3rem 0.6rem;
+    height: 100%;
+    background-color: var(--color-darkgreen);
+    color: var(--color-black);
+    border: 0;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #adminPanel__users_table button:hover, .adminPanel__users_adduser:hover {
+    background-color: var(--color-gray);
+    color: var(--color-neongreen);
+  }
+
+  #adminPanel__users_table {
+    table-layout: fixed;
+  }
+
+  .adminPanel__users_actions {
+    width: 12%;
+  }

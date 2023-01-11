@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './AdminPanel.css';
 
-import Users from './Users/User'
+import Users from './Users/Users'
+import AddUsers from './Users/AddUsers/AddUser'
 import SideMenu from './Sidemenu/Sidemenu';
 import Meds from './Meds/Meds';
 import Prescriptions from './Prescriptions/Prescriptions';
@@ -38,7 +39,8 @@ function AdminPanel () {
           <Route path="/Prescriptions" element={<Prescriptions />} />    
           <Route path="/Referals" element={<Referals />} />    
           <Route path="/Sickleaves" element={<Sickleaves />} />    
-          <Route path="/Visits" element={<Visits />} /> 
+          <Route path="/Visits" element={<Visits />} />
+          <Route path="/Users/Add" element={<AddUsers />} />
         </Routes>
       </div>             
     </div>

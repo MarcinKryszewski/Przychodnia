@@ -36,7 +36,7 @@ function Navbar () {
         <div>
           {state.userLogged && state.userSpecial &&
           <div className='app__navbar-login'>
-            <Link to='/przychodnia/adminpanel' className='p__opensans'>ADMIN</Link>
+            <Link to='/przychodnia/adminpanel/Users' className='p__opensans'>ADMIN</Link>
             <div />
             <Link to='/przychodnia' className='p__opensans' onClick={handleClick}>Wyloguj</Link>
           </div>
