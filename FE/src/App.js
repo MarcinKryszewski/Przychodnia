@@ -9,6 +9,7 @@ import User from './components/User/User';
 import Store from './Store';
 import AdminPanel from './components/AdminPanel/AdminPanel';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
 
 import React, { 
   useRef, 

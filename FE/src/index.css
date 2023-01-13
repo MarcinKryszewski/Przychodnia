@@ -64,3 +64,16 @@ a {
               transform: translateY(0);
     }
   }
+
+  .notification-enter {
+    transform: translate3d(-100%, 0, 0) !important;
+  }
+  
+  .notification-exit.notification-exit-active {
+    transform: translate3d(-100%, 0, 0) !important;
+  }
+  
+  .notification-container {
+    left: 0 !important;
+    right: auto !important;
+  }

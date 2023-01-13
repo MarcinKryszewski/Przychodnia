@@ -41,36 +41,39 @@ function AddUsers () {
 
   return (
     <div>
+      <div>Username: </div>
       <input 
         type="text" 
         id="login" 
-        className="login__form-login" 
+        className="adminpanel__adduser-login" 
         name="login" 
         placeholder="LOGIN" 
         onChange={changeUsername}
         value={username}
         required
       />
+      <div>Password: </div>
       <input 
         type="text" 
         id="password" 
-        className="login__form-password" 
+        className="adminpanel__adduser-password" 
         name="login" 
         placeholder="HASŁO" 
         onChange={changePassword}
         value={password}
         required
       />
+      <div>Admin: </div>
       <input 
         type="checkbox" 
         id="adminRights" 
-        className="login__form-adminrights" 
+        className="adminpanel__adduser-adminrights" 
         name="adminRights"
         onChange={changeAdminRights}
         value={adminRights}
         required
       />
-      <button className="login__form-submit" onClick={addUser}>DODAJ UŻYTKOWNIKA</button>
+      <button className="adminpanel__adduser-submit" onClick={addUser}>DODAJ UŻYTKOWNIKA</button>
     </div>
   )
 }

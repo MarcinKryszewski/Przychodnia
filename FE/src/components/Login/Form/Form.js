@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react'
 import './Form.css';
 import axios from 'axios';
-import { NotificationContainer, NotificationManager } from 'react-notifications';
-import 'react-notifications/lib/notifications.css';
+import { NotificationManager } from 'react-notifications';
 import { Context } from '../../../Store';
 
 function Form () {
 
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
+  // eslint-disable-next-line
   const [state, setState] = useContext(Context);
 
   const loginUser = async () => {
@@ -21,7 +21,7 @@ function Form () {
       const loggedUser = res.data;
       NotificationManager.success('Zalogowano', 'Logowanie');   
       
-      if (res.status == 222){
+      if (res.status === 222){
         setState({
           userLogged: true,
           userId: loggedUser,
