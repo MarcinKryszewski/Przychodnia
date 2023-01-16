@@ -12,8 +12,6 @@ class UserActions {
         const password = req.body.password;
         const userspecial = req.body.userspecial;
 
-        console.log(req.body);
-
         if (await User.findOne({ "username": username }) == null) {    
             const user = new User({
                 username: username,
@@ -43,9 +41,10 @@ class UserActions {
         } catch {res.status(403).json("Błędny login lub hasło");}
     }
 
-    deleteUser(req, res) {
+    async deleteUser(req, res) {
         const id = req.params.id;
-        res.send('delete: ' + id);
+        await User.deleteOne({ _id: id });
+        res.sendStatus(204);
     }
 }
 

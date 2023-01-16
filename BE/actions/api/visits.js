@@ -7,9 +7,20 @@ class VisitActions {
     async allVisits(req, res) {
         const visit = await Visit.find({});
         const user = await User.find({});
-
-        const visitUser = alasql("SELECT * FROM ? LEFT JOIN ? ON user._id = visit.userid", (visit, user));
-        res.status(200).json(visitUser);
+        const userVisit = await Visit.aggregate([
+            {
+                $lookup:
+                {
+                    from: "users",
+                    localField: "userid",
+                    foreignField: "_id",
+                    as: "user"
+                }
+            }
+        ])
+        //var visitUser = alasql('SELECT * FROM ? LEFT JOIN ? ON user._id = visit.userid', [visit, user]);
+        //console.log(visitUser);
+        res.status(200).json(userVisit);
     }
 
     //user.username, visit.visitname

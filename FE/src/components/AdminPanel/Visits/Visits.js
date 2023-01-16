@@ -6,7 +6,6 @@ function Visits() {
   const TestClick = async () => {
     console.log("aaaaaaaa");
     const tst = await axios.get("http://localhost:3001/api/visits");
-    console.log(tst);
     console.log(tst.data);
   };
 

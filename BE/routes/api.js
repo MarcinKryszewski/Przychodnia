@@ -13,7 +13,7 @@ router.post('/userAdd', userActions.addUser);
 //get user
 router.post('/users/login', userActions.getUser);
 //delete user
-router.delete('/visits/:id', userActions.deleteUser);
+router.delete('/users/:id', userActions.deleteUser);
 
 //all visits
 router.get('/visits', visitActions.allVisits);

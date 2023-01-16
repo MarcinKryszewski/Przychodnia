@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Users.css';
 import { Link, useNavigate, redirect } from "react-router-dom";
 import axios from 'axios';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 
 function Users () {
@@ -21,8 +22,20 @@ function Users () {
   }, []);
 
   const AddUserHandler = async () => {
-    console.log("aaaaaa");
     navigate("/przychodnia/adminpanel/Users/Add");
+  }
+
+  const DeleteHandler = async (u) => {
+
+    const res = await axios.delete("http://localhost:3001/api/users/" + u._id);
+    if (res.status === 204) {
+      NotificationManager.success(u.username, 'Usnięto użytkownika!');
+    } else {
+
+    }
+    
+    
+    usersList();
   }
   
   return (
@@ -44,13 +57,13 @@ function Users () {
         </thead>
         <tbody>
         {users.map(user =>(
-        <Fragment key={user.id}>
+        <Fragment key={user._id}>
           <tr>
             <td>{user.username}</td>
             <td>{user.password}</td>
             <td>{user.userspecial.toString()}</td>
             <td><button>MANAGE</button>
-            <button>DELETE</button></td>
+            <button onClick={() => DeleteHandler(user)} >DELETE</button></td>
           </tr>
         </Fragment>
       ))}
@@ -60,6 +73,8 @@ function Users () {
     </div>
   )
 }
+
+//() => this.handleClick(value)
 
 export default Users
 

@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import axios from 'axios';
+import { Link, useNavigate, redirect } from 'react-router-dom';
 
 function AddUsers () {
 
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
   const [adminRights, setAdminRights] = useState(false);
+
+  const navigate = useNavigate();
 
   const changeUsername = event => {
     const value = event.target.value;
@@ -34,6 +37,8 @@ function AddUsers () {
         console.log(user);
         const res = await axios.post('http://localhost:3001/api/userAdd', user);
         //const newNote = res.data;
+        NotificationManager.success('Stworzono użytkownika!', user.username);
+        navigate("/przychodnia/adminpanel/Users");
     } catch (error) {
       NotificationManager.error(error.response.data);
     }
