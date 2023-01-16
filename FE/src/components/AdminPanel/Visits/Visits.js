@@ -1,51 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
+import axios from 'axios';
 
-export class Visits extends Component {
+function Visits() {
 
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       visitElements: [
-        {
-          id: 1,
-          visitDate: '2022-12-01',
-          doctor: 'Stefan Nowak',
-          doctorPhone: 123456789,
-          doctorType: 'Pediatra',
-          visitLocationCity: '82-300 Elbląg',
-          visitLocationClinicName: 'PPL Jaśminowa',
-          visitLocationClinicAddress: 'Robotnicza 79/X',
-          visitStatus: true
-        },
-        {
-          id: 2,
-          visitDate: '2022-10-01',
-          doctor: 'Stefan Nowak',
-          doctorPhone: 123456789,
-          doctorType: 'Pediatra',
-          visitLocationCity: '82-300 Elbląg',
-          visitLocationClinicName: 'PPL Jaśminowa',
-          visitLocationClinicAddress: 'Robotnicza 79/X',
-          visitStatus: true
-        }
-       ]
-    }
-  }
+  const TestClick = async () => {
+    console.log("aaaaaaaa");
+    const tst = await axios.get("http://localhost:3001/api/visits");
+    console.log(tst);
+    console.log(tst.data);
+  };
 
-  render() {
-    const visitElements = this.state.visitElements.map(
-      e => {
-        return <div>
-          <div>{e.visitDate}</div>
-          <div>{e.doctor}</div>
-        </div>
-      }
-    )
     return (
-      <div>{visitElements}</div>
+      <div>
+        <button onClick={TestClick}>TEST</button>
+      </div>
     )
-  }
 }
 
 export default Visits

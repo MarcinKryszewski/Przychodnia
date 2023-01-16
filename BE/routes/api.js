@@ -7,7 +7,7 @@ const visitActions = require('../actions/api/visits');
 // pobieranie wizyty dla użytkownika
 
 //all users
-router.post('/users', userActions.allUsers);
+router.get('/users', userActions.allUsers);
 //add user
 router.post('/userAdd', userActions.addUser);
 //get user
@@ -16,11 +16,11 @@ router.post('/users/login', userActions.getUser);
 router.delete('/visits/:id', userActions.deleteUser);
 
 //all visits
-router.post('/visits', visitActions.allVisits);
+router.get('/visits', visitActions.allVisits);
 // save visit
 router.post('/visit', visitActions.addVisit);
 //get visit
-router.get('/visits/:userid', visitActions.getVisit);
+router.get('/visits/:userid', visitActions.getUserVisits);
 //edit visit
 router.put('/visits/:id', visitActions.updateVisit);
 //delete visit

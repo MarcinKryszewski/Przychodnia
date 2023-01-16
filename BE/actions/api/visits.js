@@ -1,11 +1,18 @@
 const Visit = require('../../db/models/visit');
+const User = require('../../db/models/user');
+const { default: alasql } = require('alasql');
 
 class VisitActions {
 
     async allVisits(req, res) {
         const visit = await Visit.find({});
-        res.status(200).json(visit);
+        const user = await User.find({});
+
+        const visitUser = alasql("SELECT * FROM ? LEFT JOIN ? ON user._id = visit.userid", (visit, user));
+        res.status(200).json(visitUser);
     }
+
+    //user.username, visit.visitname
 
     async addVisit(req, res) {
         const userid = req.body.userid;
@@ -19,7 +26,7 @@ class VisitActions {
         res.status(200).json(visit);
     }
 
-    async getVisit(req, res) {
+    async getUserVisits(req, res) {
         const userId = req.params.userid;
         const visit = await Visit.find({userid: userId});
         res.status(200).json(visit);

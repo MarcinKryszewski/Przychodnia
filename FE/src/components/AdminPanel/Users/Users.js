@@ -1,32 +1,24 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './Users.css';
 import { Link, useNavigate, redirect } from "react-router-dom";
+import axios from 'axios';
 
 
 function Users () {
 
+  const [users, setUsers] = useState([]);
+
   const navigate = useNavigate();
-  const testUsers = [
-    {
-      id: 1,
-      username: "user1",
-      password: "user",
-      userspecial: false
-    },
-    {
-      id: 2,
-      username: "admin",
-      password: "admin",
-      userspecial: true
-    },
-    {
-      id: 3,
-      username: "user2",
-      password: "user",
-      userspecial: true
-    }
-  ];
+
+  const usersList = async () => {
+    const res = await axios.get("http://localhost:3001/api/users");
+    setUsers(res.data);
+  };
+
+  useEffect(() => {
+    usersList();    
+  }, []);
 
   const AddUserHandler = async () => {
     console.log("aaaaaa");
@@ -51,7 +43,7 @@ function Users () {
         </tr>
         </thead>
         <tbody>
-      {testUsers.map(user =>(
+        {users.map(user =>(
         <Fragment key={user.id}>
           <tr>
             <td>{user.username}</td>
@@ -70,3 +62,18 @@ function Users () {
 }
 
 export default Users
+
+
+/*
+{users.map(user =>(
+        <Fragment key={user.id}>
+          <tr>
+            <td>{user.username}</td>
+            <td>{user.password}</td>
+            <td>{user.userspecial.toString()}</td>
+            <td><button>MANAGE</button>
+            <button>DELETE</button></td>
+          </tr>
+        </Fragment>
+      ))}
+*/

@@ -8,7 +8,6 @@ function Form () {
 
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
-  // eslint-disable-next-line
   const [state, setState] = useContext(Context);
 
   const loginUser = async () => {
