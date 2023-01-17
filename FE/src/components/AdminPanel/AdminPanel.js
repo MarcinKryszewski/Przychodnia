@@ -41,23 +41,23 @@ function AdminPanel () {
       {
         state.userSpecial ?      
         <div className='adminPanel__menu'>
-        <div className='adminPanel__menu-wrapper'><SideMenu onChange={MenuClick} /></div>
-        <div className='adminPanel__component-wrapper'>
-          <Routes>
-            <Route path="/Users" element={<Users />} /> 
-            <Route path="/Users/Add" element={<AddUsers />} />
-            <Route path="/Users/Edit/:id" element={<EditUsers  />} />
+          <div className='adminPanel__menu-wrapper'><SideMenu onChange={MenuClick} /></div>
+          <div className='adminPanel__component-wrapper'>
+            <Routes>
+              <Route path="/Users" element={<Users />} /> 
+              <Route path="/Users/Add" element={<AddUsers />} />
+              <Route path="/Users/Edit/:id" element={<EditUsers  />} />
 
-            <Route path="/Meds" element={<Meds />} />
-            <Route path="/Prescriptions" element={<Prescriptions />} />    
-            <Route path="/Referals" element={<Referals />} />    
-            <Route path="/Sickleaves" element={<Sickleaves />} /> 
+              <Route path="/Meds" element={<Meds />} />
+              <Route path="/Prescriptions" element={<Prescriptions />} />    
+              <Route path="/Referals" element={<Referals />} />    
+              <Route path="/Sickleaves" element={<Sickleaves />} /> 
 
-            <Route path="/Visits" element={<Visits />} />          
-            <Route path="/Visits/Add" element={<AddVisits />} />
-            <Route path="/Visits/Edit/:id" element={<EditVisits />} />
-          </Routes>
-        </div>             
+              <Route path="/Visits" element={<Visits />} />          
+              <Route path="/Visits/Add" element={<AddVisits />} />
+              <Route path="/Visits/Edit/:id" element={<EditVisits />} />
+            </Routes>
+          </div>             
         </div> :
         (<Navigate to="/przychodnia" />)
       }
