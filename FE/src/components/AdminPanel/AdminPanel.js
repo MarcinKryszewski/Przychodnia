@@ -9,6 +9,7 @@ import Prescriptions from './Prescriptions/Prescriptions';
 import Referals from './Referals/Referals';
 import Sickleaves from './Sickleaves/Sickleaves';
 import Visits from './Visits/Visits';
+import AddVisits from './Visits/AddVisit/AddVisit'
 
 import images from '../../constants/images';
 
@@ -41,6 +42,7 @@ function AdminPanel () {
           <Route path="/Sickleaves" element={<Sickleaves />} />    
           <Route path="/Visits" element={<Visits />} />
           <Route path="/Users/Add" element={<AddUsers />} />
+          <Route path="/Visits/Add" element={<AddVisits />} />
         </Routes>
       </div>             
     </div>

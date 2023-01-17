@@ -1,6 +1,7 @@
 const Visit = require('../../db/models/visit');
 const User = require('../../db/models/user');
 const { default: alasql } = require('alasql');
+const { ObjectId } = require('mongodb');
 
 class VisitActions {
 
@@ -26,7 +27,7 @@ class VisitActions {
     //user.username, visit.visitname
 
     async addVisit(req, res) {
-        const userid = req.body.userid;
+        const userid = ObjectId(req.body.userid);
         const visitname = req.body.visitname;
 
         const visit = new Visit({
@@ -47,9 +48,10 @@ class VisitActions {
         res.send('..');
     }
 
-    deleteVisit(req, res) {
+    async deleteVisit(req, res) {
         const id = req.params.id;
-        res.send('delete: ' + id);
+        await Visit.deleteOne({ _id: id });
+        res.sendStatus(204);
     }
 }
 

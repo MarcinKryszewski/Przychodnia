@@ -78,6 +78,7 @@ function AddUsers () {
         value={adminRights}
         required
       />
+      <br /><br />
       <button className="adminpanel__adduser-submit" onClick={addUser}>DODAJ UŻYTKOWNIKA</button>
     </div>
   )

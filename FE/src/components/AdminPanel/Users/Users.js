@@ -9,7 +9,6 @@ import { NotificationContainer, NotificationManager } from 'react-notifications'
 function Users () {
 
   const [users, setUsers] = useState([]);
-
   const navigate = useNavigate();
 
   const usersList = async () => {
@@ -32,9 +31,7 @@ function Users () {
       NotificationManager.success(u.username, 'Usnięto użytkownika!');
     } else {
 
-    }
-    
-    
+    }   
     usersList();
   }
   

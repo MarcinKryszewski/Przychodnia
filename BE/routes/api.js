@@ -18,7 +18,7 @@ router.delete('/users/:id', userActions.deleteUser);
 //all visits
 router.get('/visits', visitActions.allVisits);
 // save visit
-router.post('/visit', visitActions.addVisit);
+router.post('/visitAdd', visitActions.addVisit);
 //get visit
 router.get('/visits/:userid', visitActions.getUserVisits);
 //edit visit

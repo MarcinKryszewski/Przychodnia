@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Visit = mongoose.model('visits', {
-    userid: String,
+    userid: mongoose.Schema.Types.ObjectId,
     visitname: String,
 });
 
