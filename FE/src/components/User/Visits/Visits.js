@@ -1,51 +1,47 @@
-import React, { Component } from 'react'
+import React, { Fragment, useState, useEffect, useContext } from 'react'
+import axios from 'axios';
+import { Context } from '../../../Store';
 
-export class Visits extends Component {
+function Visits () {
 
-  constructor(props) {
-    super(props)
+  const [visitList, setVisitList] = useState([]);
+  const [state] = useContext(Context);
   
-    this.state = {
-       visitElements: [
-        {
-          id: 1,
-          visitDate: '2022-12-01',
-          doctor: 'Stefan Nowak',
-          doctorPhone: 123456789,
-          doctorType: 'Pediatra',
-          visitLocationCity: '82-300 Elbląg',
-          visitLocationClinicName: 'PPL Jaśminowa',
-          visitLocationClinicAddress: 'Robotnicza 79/X',
-          visitStatus: true
-        },
-        {
-          id: 2,
-          visitDate: '2022-10-01',
-          doctor: 'Stefan Nowak',
-          doctorPhone: 123456789,
-          doctorType: 'Pediatra',
-          visitLocationCity: '82-300 Elbląg',
-          visitLocationClinicName: 'PPL Jaśminowa',
-          visitLocationClinicAddress: 'Robotnicza 79/X',
-          visitStatus: true
-        }
-       ]
-    }
-  }
+  const GetVisits = async () => {
+    const res = await axios.get("http://localhost:3001/api/visits/" + state.userId);
+    setVisitList(res.data);
+  };
 
-  render() {
-    const visitElements = this.state.visitElements.map(
-      e => {
-        return <div>
-          <div>{e.visitDate}</div>
-          <div>{e.doctor}</div>
-        </div>
-      }
-    )
-    return (
-      <div>{visitElements}</div>
-    )
-  }
+  useEffect(() => {
+    GetVisits();
+  }, );
+
+  return (
+    <div >
+      <table >
+      <colgroup>
+        <col />
+        <col />
+      </colgroup>
+      <thead>
+        <tr>
+          <th >USERNAME</th>
+          <th >VISITNAME</th>
+        </tr>
+        </thead>
+        <tbody>
+        {visitList.map(visit =>(
+        <Fragment key={visit._id}>
+          <tr>
+            {visit.user.map(user =>(<td key={user._id}>{user.username}</td>))}
+            <td>{visit.visitname}</td>
+          </tr>
+        </Fragment>
+      ))}
+      </tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Visits

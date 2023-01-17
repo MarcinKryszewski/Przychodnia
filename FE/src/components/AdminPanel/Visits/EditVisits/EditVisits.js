@@ -21,7 +21,7 @@ function EditVisits () {
 
   useEffect(() => {
     UsersList();    
-  }, []);
+  }, );
 
   const changeUsername = event => {
     const value = event.target.value;
@@ -49,8 +49,7 @@ function EditVisits () {
         userid: userid
     };
     try {
-        const res = await axios.put('http://localhost:3001/api/visits/' + id, visit);
-        //const newNote = res.data;
+        await axios.put('http://localhost:3001/api/visits/' + id, visit);
         NotificationManager.success('Zmieniono wizytę!', visit.visitname);
         navigate("/przychodnia/adminpanel/Visits");
         console.log("EDIT");

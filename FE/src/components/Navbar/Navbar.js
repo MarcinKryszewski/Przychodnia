@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdLocalHospital } from 'react-icons/md'
 import './Navbar.css';
-import PropTypes from 'prop-types';
 import { Context } from '../../Store';
 
 import images from '../../constants/images';
@@ -42,7 +41,7 @@ function Navbar () {
           </div>
           }
 
-          {state.userLogged == true && state.userSpecial == false &&
+          {state.userLogged === true && state.userSpecial === false &&
           <div className='app__navbar-login'>
             <Link to='/przychodnia/user' className='p__opensans'>Pacjent</Link>
             <div />
@@ -50,7 +49,7 @@ function Navbar () {
           </div>
           }
 
-          {state.userLogged == false && state.userSpecial == false &&
+          {state.userLogged === false && state.userSpecial === false &&
           <div className='app__navbar-login'><Link to='/przychodnia/login' className='p__opensans'>Logowanie</Link></div>
           }
           

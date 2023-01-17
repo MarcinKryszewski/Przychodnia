@@ -53,8 +53,24 @@ class VisitActions {
     }
 
     async GetUserVisits(req, res) {
-        const userId = req.params.userid;
-        const visit = await Visit.find({userid: userId});
+        const userid = ObjectId(req.params.userid);
+        const visit = await Visit.aggregate([
+            {
+                $match:
+                {
+                    userid: userid
+                }
+            },
+            {
+                $lookup:
+                {
+                    from: "users",
+                    localField: "userid",
+                    foreignField: "_id",
+                    as: "user"
+                }
+                
+            }]);
         res.status(200).json(visit);
     }
 
