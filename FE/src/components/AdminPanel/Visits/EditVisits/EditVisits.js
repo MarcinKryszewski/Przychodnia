@@ -1,37 +1,33 @@
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 import axios from 'axios';
-import { Link, useNavigate, redirect } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-function AddVisits () {
+function EditVisits () {
 
-  const [username, setusername] = useState('');
+  const [username, setUsername] = useState('');
   const [visitName, setVisitName] = useState('');
   const [users, setUsers] = useState([]);
   const [userid, setUserId] = useState('');
+  const { id } = useParams();
 
   const navigate = useNavigate();
 
-  const usersList = async () => {
+  const UsersList = async () => {
     const res = await axios.get("http://localhost:3001/api/users");
     setUsers(res.data);
-    setusername(res.data[0].username);
-    setUserId(res.data[0]._id);
+    GetVisit();
   };
 
   useEffect(() => {
-    usersList();
+    UsersList();    
   }, []);
 
   const changeUsername = event => {
     const value = event.target.value;
     const text = event.target.options[event.target.selectedIndex].text
-    setusername(text);    
+    setUsername(text);    
     setUserId(value);
-
-    console.log(value);
-    console.log(text);
   };
 
   const changeVisitName = event => {
@@ -39,17 +35,25 @@ function AddVisits () {
     setVisitName(value);
   };
 
-  const addVisit = async () => {
+  const GetVisit = async () => {
+    const visit = await (await axios.get('http://localhost:3001/api/visit/' + id)).data;
+    setVisitName(visit[0].visitname);
+    setUsername(visit[0].user[0].username);
+    setUserId(visit[0].user[0]._id);
+  }
+
+  const EditVisit = async () => {
     const visit = {
         username: username,
         visitname: visitName,
         userid: userid
     };
     try {
-        const res = await axios.post('http://localhost:3001/api/visitAdd', visit);
+        const res = await axios.put('http://localhost:3001/api/visits/' + id, visit);
         //const newNote = res.data;
-        NotificationManager.success('Stworzono wizytę!', visit.visitname);
+        NotificationManager.success('Zmieniono wizytę!', visit.visitname);
         navigate("/przychodnia/adminpanel/Visits");
+        console.log("EDIT");
     } catch (error) {
       NotificationManager.error(error.response.data);
     }
@@ -81,12 +85,12 @@ function AddVisits () {
       />
       
       <br /><br />
-      <button className="adminpanel__adduser-submit" onClick={addVisit}>ADD VISIT</button>
+      <button className="adminpanel__adduser-submit" onClick={EditVisit}>EDIT VISIT</button>
     </div>
   )
 }
 
-export default AddVisits
+export default EditVisits
 
 /*
 key={users._id}

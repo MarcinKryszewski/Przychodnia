@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import axios from 'axios';
-import { Link, useNavigate, redirect } from "react-router-dom";
-import { NotificationContainer, NotificationManager } from 'react-notifications';
+import { useNavigate } from "react-router-dom";
+import { NotificationManager } from 'react-notifications';
 
 function Visits() {
 
@@ -20,6 +20,10 @@ function Visits() {
 
   const AddVisitHandler = async () => {
     navigate("/przychodnia/adminpanel/Visits/Add");
+  }
+
+  const EditVisitHandler = (v) =>{
+    navigate("/przychodnia/adminpanel/Visits/Edit/" + v._id);
   }
 
   const DeleteHandler = async (v) => {
@@ -53,7 +57,7 @@ function Visits() {
           <tr>
             {visit.user.map(user =>(<td key={user._id}>{user.username}</td>))}
             <td>{visit.visitname}</td>
-            <td><button>MANAGE</button>
+            <td><button onClick={() => EditVisitHandler(visit)}>MANAGE</button>
             <button onClick={() => DeleteHandler(visit)} >DELETE</button></td>
           </tr>
         </Fragment>

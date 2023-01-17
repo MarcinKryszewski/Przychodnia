@@ -1,13 +1,20 @@
 const User = require('../../db/models/user');
+const { ObjectId } = require('mongodb');
 
 class UserActions {
 
-    async allUsers(req, res) {
+    async AllUsers(req, res) {
         const user = await User.find({});
         res.status(200).json(user);
     }
 
-    async addUser(req, res) {
+    async GetUser(req, res) {
+        const id = req.params.id;
+        const user = await User.findOne({ _id: id });
+        res.status(200).json(user);
+    }
+
+    async AddUser(req, res) {
         const username = req.body.username;
         const password = req.body.password;
         const userspecial = req.body.userspecial;
@@ -24,8 +31,23 @@ class UserActions {
             res.status(409).json("Nazwa użytkownika zajęta!");
         }
     }
+    
+    async UpdateUser(req, res) {
+        const id = ObjectId(req.params.id);
+        const username = req.body.username;
+        const password = req.body.password;        
+        const userspecial = req.body.userspecial;
 
-    async getUser(req, res) {
+        const user = await User.findOne({ _id: id });
+        user.username = username;
+        user.password = password;
+        user.userspecial = userspecial;
+        await user.save();
+
+        res.status(201).json(user);
+    }
+
+    async LoginUser(req, res) {
         const username = req.body.username;
         const password = req.body.password;        
         const user = await User.findOne({username: username});
@@ -41,7 +63,7 @@ class UserActions {
         } catch {res.status(403).json("Błędny login lub hasło");}
     }
 
-    async deleteUser(req, res) {
+    async DeleteUser(req, res) {
         const id = req.params.id;
         await User.deleteOne({ _id: id });
         res.sendStatus(204);

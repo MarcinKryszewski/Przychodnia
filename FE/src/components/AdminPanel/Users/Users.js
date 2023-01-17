@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './Users.css';
-import { Link, useNavigate, redirect } from "react-router-dom";
+import { Link, useNavigate, redirect, useParams } from "react-router-dom";
 import axios from 'axios';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 
@@ -20,8 +20,12 @@ function Users () {
     usersList();    
   }, []);
 
-  const AddUserHandler = async () => {
+  const AddUserHandler = () => {
     navigate("/przychodnia/adminpanel/Users/Add");
+  }
+
+  const EditUserHandler = (u) =>{
+    navigate("/przychodnia/adminpanel/Users/Edit/" + u._id);
   }
 
   const DeleteHandler = async (u) => {
@@ -59,7 +63,7 @@ function Users () {
             <td>{user.username}</td>
             <td>{user.password}</td>
             <td>{user.userspecial.toString()}</td>
-            <td><button>MANAGE</button>
+            <td><button onClick={() => EditUserHandler(user)}>MANAGE</button>
             <button onClick={() => DeleteHandler(user)} >DELETE</button></td>
           </tr>
         </Fragment>
