@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect, useContext } from 'react'
 import axios from 'axios';
 import { Context } from '../../../Store';
 
+import './Visits.css';
+
 function Visits () {
 
   const [visitList, setVisitList] = useState([]);
@@ -17,8 +19,8 @@ function Visits () {
   }, );
 
   return (
-    <div >
-      <table >
+    <div className='userPanel__visits_visit' >
+      <table id="userPanel__visits_table">
       <colgroup>
         <col />
         <col />

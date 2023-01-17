@@ -1,0 +1,54 @@
+.userPanel__visits_visit {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+}
+
+#userPanel__visits_table td, #userPanel__visits_table th {
+    border: 1px solid var(--color-black);
+    padding: 3px;
+    text-align: center;
+  }
+  
+  #userPanel__visits_table tr:nth-child(even){
+    background-color: var(--color-gray);
+  }
+  
+  #userPanel__visits_table tr:hover {
+    background-color: var(--color-grey);
+    color: var(--color-darkblue);
+  }
+  
+  #userPanel__visits_table th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    background-color: var(--color-darkblue);
+    color: var(--color-white);
+    font-weight: 800;
+  }
+
+  #userPanel__visits_table button, .userPanel__visits_adduser {
+    margin: 0 0.2rem;
+    padding: 0.3rem 0.6rem;
+    height: 100%;
+    background-color: var(--color-darkblue);
+    color: var(--color-black);
+    border: 0;
+    border-radius: 5px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #userPanel__visits_table button:hover, .userPanel__visits_adduser:hover {
+    background-color: var(--color-gray);
+    color: var(--color-neongreen);
+  }
+
+  #userPanel__visits_table {
+    table-layout: fixed;
+  }
+
+  .userPanel__visits_actions {
+    width: 12%;
+  }
