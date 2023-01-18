@@ -16,7 +16,7 @@ function Form () {
         password: password
     };
     try {
-      const res = await axios.post("http://localhost:3001/api/users/login", user);
+      const res = await axios.post(process.env.REACT_APP_SERVER_URL + "/users/login", user);
       const loggedUser = res.data;
       NotificationManager.success('Zalogowano', 'Logowanie');   
       

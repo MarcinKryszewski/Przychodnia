@@ -9,7 +9,7 @@ function Visits() {
   const navigate = useNavigate();
   
   const GetVisits = async () => {
-    const res = await axios.get("http://localhost:3001/api/visits");
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + "/visits");
     setVisitList(res.data);
   };
 
@@ -27,7 +27,7 @@ function Visits() {
   }
 
   const DeleteHandler = async (v) => {
-    const res = await axios.delete("http://localhost:3001/api/visits/" + v._id);
+    const res = await axios.delete(process.env.REACT_APP_SERVER_URL + "/visits/" + v._id);
     if (res.status === 204) {
       NotificationManager.success(v.visitname, 'Usnięto wizytę!');
     } else {

@@ -13,7 +13,7 @@ function AddVisits () {
   const navigate = useNavigate();
 
   const usersList = async () => {
-    const res = await axios.get("http://localhost:3001/api/users");
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + "/users");
     setUsers(res.data);
     setusername(res.data[0].username);
     setUserId(res.data[0]._id);
@@ -42,7 +42,7 @@ function AddVisits () {
         userid: userid
     };
     try {
-        const res = await axios.post('http://localhost:3001/api/visitAdd', visit);
+        const res = await axios.post(process.env.REACT_APP_SERVER_URL + '/visitAdd', visit);
         //const newNote = res.data;
         NotificationManager.success('Stworzono wizytę!', visit.visitname);
         navigate("/przychodnia/adminpanel/Visits");

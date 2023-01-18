@@ -12,7 +12,7 @@ function Users () {
   const navigate = useNavigate();
 
   const usersList = async () => {
-    const res = await axios.get("http://localhost:3001/api/users");
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + "/users");
     setUsers(res.data);
   };
 
@@ -30,7 +30,7 @@ function Users () {
 
   const DeleteHandler = async (u) => {
 
-    const res = await axios.delete("http://localhost:3001/api/users/" + u._id);
+    const res = await axios.delete(process.env.REACT_APP_SERVER_URL + "/users/" + u._id);
     if (res.status === 204) {
       NotificationManager.success(u.username, 'Usnięto użytkownika!');
     } else {

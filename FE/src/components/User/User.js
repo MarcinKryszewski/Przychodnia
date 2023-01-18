@@ -45,8 +45,7 @@ import {
         </div> :
         (<Navigate to="/przychodnia" />)
       }
-    </div>
-    
+    </div>    
   )
 }
 

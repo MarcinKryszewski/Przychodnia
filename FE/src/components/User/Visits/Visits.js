@@ -10,7 +10,7 @@ function Visits () {
   const [state] = useContext(Context);
   
   const GetVisits = async () => {
-    const res = await axios.get("http://localhost:3001/api/visits/" + state.userId);
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + "/visits/" + state.userId);
     setVisitList(res.data);
   };
 

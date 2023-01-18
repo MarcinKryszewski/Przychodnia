@@ -32,7 +32,7 @@ function EditUsers () {
   };
 
   const GetUser = async () => {
-    const user = await (await axios.get('http://localhost:3001/api/user/' + id)).data;
+    const user = await (await axios.get(process.env.REACT_APP_SERVER_URL + '/user/' + id)).data;
     
     setusername(user.username);
     setPassword(user.password);
@@ -46,7 +46,7 @@ function EditUsers () {
         userspecial: adminRights
     };
     try {
-        const res = await axios.put('http://localhost:3001/api/users/' + id, user);
+        const res = await axios.put(process.env.REACT_APP_SERVER_URL + '/users/' + id, user);
         NotificationManager.success('Zmieniono użytkownika!', user.username);
         navigate("/przychodnia/adminpanel/Users");
     } catch (error) {

@@ -34,7 +34,7 @@ function AddUsers () {
     };
     try {
         console.log(user);
-        const res = await axios.post('http://localhost:3001/api/userAdd', user);
+        const res = await axios.post(process.env.REACT_APP_SERVER_URL + '/userAdd', user);
         //const newNote = res.data;
         NotificationManager.success('Stworzono użytkownika!', user.username);
         navigate("/przychodnia/adminpanel/Users");

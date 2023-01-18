@@ -14,7 +14,7 @@ function EditVisits () {
   const navigate = useNavigate();
 
   const UsersList = async () => {
-    const res = await axios.get("http://localhost:3001/api/users");
+    const res = await axios.get(process.env.REACT_APP_SERVER_URL + "/users");
     setUsers(res.data);
     GetVisit();
   };
@@ -36,7 +36,7 @@ function EditVisits () {
   };
 
   const GetVisit = async () => {
-    const visit = await (await axios.get('http://localhost:3001/api/visit/' + id)).data;
+    const visit = await (await axios.get(process.env.REACT_APP_SERVER_URL + '/visit/' + id)).data;
     setVisitName(visit[0].visitname);
     setUsername(visit[0].user[0].username);
     setUserId(visit[0].user[0]._id);
@@ -49,7 +49,7 @@ function EditVisits () {
         userid: userid
     };
     try {
-        await axios.put('http://localhost:3001/api/visits/' + id, visit);
+        await axios.put(process.env.REACT_APP_SERVER_URL + '/visits/' + id, visit);
         NotificationManager.success('Zmieniono wizytę!', visit.visitname);
         navigate("/przychodnia/adminpanel/Visits");
         console.log("EDIT");
